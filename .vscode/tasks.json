@@ -4,7 +4,7 @@
         {
             "label": "hugo-watch",
             "type": "shell",
-            "command": "test -z '${env:REMOTE_CONTAINERS}' || make dev warn=1",
+            "command": "test -z '${env:REMOTE_CONTAINERS}' || hugo server --bind 0.0.0.0 -D -F -w --printI18nWarnings --printPathWarnings --printUnusedTemplates",
             "args": [],
             "options": {
                 "cwd": "${workspaceFolder}"
@@ -19,30 +19,6 @@
             "runOptions": {
                 "runOn": "folderOpen"
             }
-        },
-        {
-            "label": "hugo-build",
-            "type": "shell",
-            "command": "test -z '${env:REMOTE_CONTAINERS}' || make build debug=1 warn=1 domain=${input:domain} dest=dist/${input:domain}",
-            "args": [],
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "problemMatcher": [],
-            "presentation": {
-                "reveal": "always"
-            },
-            "group": "build"
         }
-    ],
-    "inputs": [
-      {
-        "id": "domain",
-        "description": "Which Hugo website to render?",
-        "type": "pickString",
-        "options": [
-          "miadoors.com"
-        ]
-      }
     ]
 }
