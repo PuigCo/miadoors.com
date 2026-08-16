@@ -10,7 +10,6 @@ disableHugoGeneratorInject = true
 disableKinds = ["rss", "section", "sitemap", "taxonomy", "term"]
 enableMissingTranslationPlaceholders = true
 enableRobotsTXT = true
-enableGoogleAnalytics = false
 
 [languages]
   [languages.en]
@@ -20,6 +19,6 @@ enableGoogleAnalytics = false
       description = "Sliding Doors, Repairs, Installations"
 
 [privacy]
-  [privacy.googleanalytics]
-    [privacy.googleanalytics.service]
-      disable = true
+  [privacy.googleAnalytics]
+    disable = true
+    respectDoNotTrack = true
