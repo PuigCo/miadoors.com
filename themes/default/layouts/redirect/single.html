@@ -1,0 +1,2 @@
+{{ $target := default "/" .Params.target }}
+{{- template "internal/redirect.html" (dict "Permalink" $target "Title" (default $target .Params.title)) -}}
