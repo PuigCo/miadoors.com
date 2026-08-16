@@ -11,6 +11,10 @@ disableKinds = ["rss", "section", "sitemap", "taxonomy", "term"]
 enableMissingTranslationPlaceholders = true
 enableRobotsTXT = true
 
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
 [languages]
   [languages.en]
     title = "MIA Doors"
