@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="{{ or site.Language.Locale site.Language.Lang }}" dir="{{ or site.Language.Direction `ltr` }}">
+{{ partial "head.html" . -}}
+
+<body>
+  <main>
+{{ block "main" . }}{{ end }}
+  </main>
+</body>
+</html>
