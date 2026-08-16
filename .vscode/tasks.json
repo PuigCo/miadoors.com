@@ -1,0 +1,48 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "hugo-watch",
+            "type": "shell",
+            "command": "test -z '${env:REMOTE_CONTAINERS}' || make dev warn=1",
+            "args": [],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "silent",
+                "close": true
+            },
+            "group": "build",
+            "isBackground": true,
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
+        },
+        {
+            "label": "hugo-build",
+            "type": "shell",
+            "command": "test -z '${env:REMOTE_CONTAINERS}' || make build debug=1 warn=1 domain=${input:domain} dest=dist/${input:domain}",
+            "args": [],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always"
+            },
+            "group": "build"
+        }
+    ],
+    "inputs": [
+      {
+        "id": "domain",
+        "description": "Which Hugo website to render?",
+        "type": "pickString",
+        "options": [
+          "miadoors.com"
+        ]
+      }
+    ]
+}

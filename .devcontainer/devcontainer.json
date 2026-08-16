@@ -24,7 +24,8 @@
     "portsAttributes": {
         "1313": {
             "label": "Hugo Preview",
-            "onAutoForward": "notify"
+            "onAutoForward": "notify",
+            "requireLocalPort": true
         }
     },
     "remoteUser": "hugo",
