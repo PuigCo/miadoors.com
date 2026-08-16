@@ -15,6 +15,11 @@ enableGoogleAnalytics = false
 [languages]
   [languages.en]
     title = "MIA Doors"
-    languageCode = "en"
+    locale = "en"
     [languages.en.params]
       description = "Sliding Doors, Repairs, Installations"
+
+[privacy]
+  [privacy.googleanalytics]
+    [privacy.googleanalytics.service]
+      disable = true
