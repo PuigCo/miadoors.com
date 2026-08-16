@@ -1,2 +1,17 @@
-{{ $target := default "/" .Params.target }}
-{{- template "internal/redirect.html" (dict "Permalink" $target "Title" (default $target .Params.title)) -}}
+{{ $target := default "/" .Params.target -}}
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale }}">
+  <head>
+    <title>Redirecting to {{ .Permalink | absURL }}</title>
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0; url={{ .Permalink | absURL }}">
+    {{ with .OutputFormats.Canonical }}<link rel="{{ .Rel }}" href="{{ .Permalink | absURL }}">{{ end }}
+    <script type="text/javascript">
+      window.location.href = "{{ .Permalink | absURL }}";
+    </script>
+  </head>
+  <body>
+    Click <a href="{{ .Permalink | absURL }}">here</a>, if you are not redirected automatically.
+  </body>
+</html>
